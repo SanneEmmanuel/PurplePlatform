@@ -54,7 +54,7 @@
     .header-banner {
       background: linear-gradient(135deg, #6a11cb 0%, #9b59b6 100%);
       color: #fff;
-      padding: 3rem 2rem 5rem;
+      padding: 3rem 2rem 6rem;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -73,7 +73,7 @@
       font-size: 3rem;
       font-weight: 900;
       letter-spacing: 3px;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       text-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
       opacity: 0;
       animation: fadeUp 1s ease forwards;
@@ -81,20 +81,23 @@
     }
 
     .header-banner p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.3rem;
-      line-height: 1.5;
+      font-size: 1.4rem;
       font-weight: 500;
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 0.6s;
+      min-height: 72px;
+      max-width: 650px;
+      margin: 0 auto;
+      letter-spacing: 0.02em;
+      opacity: 0.85;
+      white-space: nowrap;
+      border-right: 2px solid #fff;
+      overflow: hidden;
+      animation: blink-caret 0.75s step-end infinite;
     }
 
     /* Our Story section */
     .our-story {
       max-width: 900px;
-      margin: 5rem auto 3rem;
+      margin: 4rem auto 3rem;
       padding: 0 20px;
       text-align: center;
     }
@@ -106,6 +109,8 @@
       margin-bottom: 1rem;
       letter-spacing: 2px;
       text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
     }
 
     .our-story p {
@@ -114,6 +119,95 @@
       color: #4b3a73;
       font-weight: 400;
       margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    /* Mission Section */
+    .mission-section {
+      background: #fff;
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(155, 89, 182, 0.15);
+      text-align: center;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    .mission-section h2 {
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: #6a11cb;
+      margin-bottom: 1rem;
+    }
+
+    .mission-section p {
+      font-size: 1.15rem;
+      color: #5e4a8a;
+      line-height: 1.6;
+    }
+
+    /* Core Values */
+    .core-values {
+      max-width: 900px;
+      margin: 0 auto 5rem;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .core-values h2 {
+      font-weight: 800;
+      font-size: 2.6rem;
+      color: #6a11cb;
+      margin-bottom: 1rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.9s;
+    }
+
+    .core-values ul {
+      list-style: none;
+      padding: 0;
+      margin: 2rem auto 0;
+      max-width: 700px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 1.2s;
+    }
+
+    .core-values ul li {
+      flex: 1 1 250px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(155, 89, 182, 0.15);
+      padding: 1.7rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #6a11cb;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .core-values ul li:hover {
+      box-shadow: 0 12px 35px rgba(155, 89, 182, 0.3);
+    }
+
+    .core-values ul li i.material-icons {
+      font-size: 2.2rem;
+      color: #9b59b6;
+      flex-shrink: 0;
     }
 
     /* Team grid */
@@ -186,6 +280,61 @@
       line-height: 1.4;
     }
 
+    /* Testimonials */
+    .testimonials {
+      max-width: 900px;
+      margin: 0 auto 5rem;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-weight: 800;
+      font-size: 2.6rem;
+      color: #6a11cb;
+      margin-bottom: 2rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 1.5s;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(155, 89, 182, 0.15);
+      padding: 2rem 2.5rem;
+      margin-bottom: 1.8rem;
+      font-style: italic;
+      color: #5e4a8a;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      animation-fill-mode: forwards;
+      animation-name: fadeSlideUp;
+      animation-duration: 0.7s;
+    }
+
+    .testimonial-card:nth-child(1) {
+      animation-delay: 1.7s;
+    }
+
+    .testimonial-card:nth-child(2) {
+      animation-delay: 2s;
+    }
+
+    .testimonial-card:nth-child(3) {
+      animation-delay: 2.3s;
+    }
+
+    .testimonial-author {
+      margin-top: 1.2rem;
+      font-weight: 700;
+      color: #6a11cb;
+      font-style: normal;
+    }
+
     /* Footer */
     footer.page-footer {
       background: #6a11cb;
@@ -231,6 +380,15 @@
       }
     }
 
+    @keyframes blink-caret {
+      0%, 100% {
+        border-color: transparent;
+      }
+      50% {
+        border-color: white;
+      }
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
       .header-banner h1 {
@@ -239,6 +397,11 @@
 
       .our-story h2 {
         font-size: 2rem;
+      }
+
+      .core-values ul {
+        flex-direction: column;
+        gap: 1.5rem;
       }
     }
   </style>
@@ -271,10 +434,7 @@
   <section class="header-banner">
     <img src="/src/logo.jpg" alt="The Purple Platform Logo" class="logo" />
     <h1>About The Purple Platform</h1>
-    <p>
-      Empowering investors worldwide with intelligent, AI-driven portfolio management.  
-      We bring innovation, security, and transparency to the future of investing.
-    </p>
+    <p id="typing-description"></p>
   </section>
 
   <!-- Our Story -->
@@ -287,9 +447,48 @@
     </p>
   </section>
 
+  <!-- Mission Section -->
+  <section class="mission-section">
+    <h2>Our Mission</h2>
+    <p>
+      To empower investors worldwide with innovative AI-driven tools that simplify portfolio management, promote transparency, and maximize returns — all while fostering financial literacy and inclusion.
+    </p>
+  </section>
+
+  <!-- Core Values -->
+  <section class="core-values">
+    <h2>Core Values</h2>
+    <ul>
+      <li><i class="material-icons">psychology</i>Innovation: We leverage the latest AI technology to stay ahead.</li>
+      <li><i class="material-icons">security</i>Security: Your data and investments are safeguarded with top-tier protocols.</li>
+      <li><i class="material-icons">public</i>Transparency: Clear, accessible insights build trust with every user.</li>
+      <li><i class="material-icons">groups</i>Community: We support a global network of investors and developers.</li>
+    </ul>
+  </section>
+
   <!-- Team Container (initially empty) -->
   <section class="team-container container" id="team-container">
     <!-- Team members will be inserted here dynamically -->
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials container">
+    <h2>What Our Investors Say</h2>
+
+    <div class="testimonial-card">
+      <p>"The Purple Platform’s AI-driven strategies helped me diversify my portfolio effortlessly. Their transparency and support are unmatched."</p>
+      <div class="testimonial-author">— Sarah L., Early Investor</div>
+    </div>
+
+    <div class="testimonial-card">
+      <p>"A game changer in the investment landscape. The automated tools save me time and deliver consistent returns."</p>
+      <div class="testimonial-author">— Michael B., Financial Advisor</div>
+    </div>
+
+    <div class="testimonial-card">
+      <p>"I love how intuitive and reliable The Purple Platform is. It’s perfect for beginners and experts alike."</p>
+      <div class="testimonial-author">— Jasmine T., Tech Entrepreneur</div>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -301,45 +500,55 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
   <script>
-    // Initialize sidenav for mobile
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('.sidenav');
-      M.Sidenav.init(elems);
+  document.addEventListener('DOMContentLoaded', function () {
+    // Typing effect for description
+    const descriptionText = "Empowering your investments with AI precision and transparency to your fingertips.";
+    const typingElem = document.getElementById('typing-description');
 
-      // Fetch and display team members
-      fetch('/src/team.json')
-        .then(response => {
-          if (!response.ok) throw new Error('Network response was not ok');
-          return response.json();
-        })
-        .then(teamData => {
-          const container = document.getElementById('team-container');
+    let index = 0;
+    function type() {
+      if (index < descriptionText.length) {
+        typingElem.textContent += descriptionText.charAt(index);
+        index++;
+        setTimeout(type, 50);
+      } else {
+        // remove caret after typing is done
+        typingElem.style.borderRight = 'none';
+      }
+    }
+    type();
 
-          teamData.forEach((member, index) => {
-            // Create the card element
-            const card = document.createElement('div');
-            card.className = 'team-member';
-            // Add animation delay to stagger fade-in
-            card.style.animationDelay = `${index * 0.3}s`;
+    // Fetch team members from external JSON file
+    fetch('/src/team.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+      })
+      .then(teamMembers => {
+        const teamContainer = document.getElementById('team-container');
+        teamMembers.forEach((member, i) => {
+          const memberElem = document.createElement('div');
+          memberElem.classList.add('team-member');
+          memberElem.style.animationDelay = `${0.3 + i * 0.3}s`;
 
-            card.innerHTML = `
-              <img src="${member.image}" alt="${member.name} - ${member.role}" />
-              <div class="member-info">
-                <div class="member-name">${member.name}</div>
-                <div class="member-role">${member.role}</div>
-                <div class="member-bio">${member.bio}</div>
-              </div>
-            `;
-
-            container.appendChild(card);
-          });
-        })
-        .catch(error => {
-          console.error('Error loading team data:', error);
-          const container = document.getElementById('team-container');
-          container.innerHTML = '<p style="color: red; text-align: center;">Failed to load team members. Please try again later.</p>';
+          memberElem.innerHTML = `
+            <img src="${member.photo}" alt="${member.name} Photo" />
+            <div class="member-info">
+              <div class="member-name">${member.name}</div>
+              <div class="member-role">${member.role}</div>
+              <div class="member-bio">${member.bio}</div>
+            </div>
+          `;
+          teamContainer.appendChild(memberElem);
         });
-    });
-  </script>
+      })
+      .catch(error => {
+        console.error('Error loading team members:', error);
+        const teamContainer = document.getElementById('team-container');
+        teamContainer.innerHTML = "<p>Failed to load team members. Please try again later.</p>";
+      });
+  });
+</script>
+
 </body>
 </html>
