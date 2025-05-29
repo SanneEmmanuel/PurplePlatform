@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Purple Platform - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 3rem 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+      width: 360px;
+      animation: floatIn 1s ease-out;
+      color: #333;
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      text-align: center;
+      color: #6a1b9a;
+      margin-bottom: 2rem;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 1rem 0.5rem 0.5rem;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .input-group label {
+      position: absolute;
+      top: 1rem;
+      left: 0.5rem;
+      color: #999;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label {
+      top: -0.5rem;
+      left: 0.25rem;
+      font-size: 0.8rem;
+      color: #6a1b9a;
+    }
+
+    button.login-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: #6a1b9a;
+      border: none;
+      color: white;
+      font-weight: 500;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button.login-btn:hover {
+      background: #7b1fa2;
+    }
+
+    .google-btn {
+      margin-top: 1rem;
+      width: 100%;
+      background: #fff;
+      color: #444;
+      border: 1px solid #ccc;
+      padding: 0.6rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .google-btn:hover {
+      background: #f5f5f5;
+    }
+
+    .google-btn i {
+      margin-right: 8px;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .signup-link a {
+      color: #6a1b9a;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Welcome to Purple Platform</h2>
+
+    <div class="input-group">
+      <input type="email" id="email" placeholder=" " required />
+      <label for="email">Email</label>
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="password" placeholder=" " required />
+      <label for="password">Password</label>
+    </div>
+
+    <button class="login-btn" onclick="handleLogin()">Login</button>
+
+    <div class="google-btn" onclick="handleGoogleLogin()">
+      <i class="material-icons">account_circle</i> Sign in with Google
+    </div>
+
+    <div class="signup-link">
+      Don’t have an account? <a href="signup.html">Sign up</a>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
