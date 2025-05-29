@@ -39,10 +39,25 @@
       }
     }
 
+    .logo {
+      display: block;
+      margin: 0 auto 1rem auto;
+      max-width: 80px;
+      height: auto;
+    }
+
     h2 {
       text-align: center;
       color: #6a1b9a;
-      margin-bottom: 2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .sub-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 1.8rem;
     }
 
     .input-group {
@@ -136,8 +151,18 @@
 </head>
 <body>
   <div class="login-container">
-    <h2>Welcome to Purple Platform</h2>
+    <!-- Logo -->
+    <img src="src/logo.jpg" alt="The Purple Platform Logo" class="logo">
 
+    <!-- Heading -->
+    <h2>Welcome to The Purple Platform</h2>
+
+    <!-- Sub-caption -->
+    <p class="sub-caption">
+      Investing, elevated.
+    </p>
+
+    <!-- Login form -->
     <div class="input-group">
       <input type="email" id="email" placeholder=" " required />
       <label for="email">Email</label>
