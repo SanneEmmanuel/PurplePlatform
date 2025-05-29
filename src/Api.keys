@@ -1,0 +1,23 @@
+// config/apiKeys.js — Internal Use Only
+
+const API_KEYS = {
+  // Purple Platform Keys
+  authLogin:     "ppk_live_7d8a2e1f9b3c49fda8e1f3e0bd89c674",
+  authSignup:    "ppk_live_914f83e7ca9c2b06fd0a473e2de0b57f",
+  txnPayment:    "ppk_txn_afe237cb49d77aa2048dc91be2c621ff",
+  txnWithdraw:   "ppk_txn_3cda1e9f5aa84e7b90a116c41b8cc2df",
+  userRemoval:   "ppk_admin_5f92c733e805496a8d3f9b61da1f7ad2",
+
+  // Firebase Configuration (Fake but Realistic)
+  firebase: {
+    apiKey:            "AIzaSyD4-fk92_eiWbNxlYI91Zi4kdgQP1ZAY3Y",
+    authDomain:        "purple-app-prod.firebaseapp.com",
+    projectId:         "purple-app-prod",
+    storageBucket:     "purple-app-prod.appspot.com",
+    messagingSenderId: "294875843210",
+    appId:             "1:294875843210:web:0a1f9b1cce947fbd2f7e93",
+    measurementId:     "G-4Y1WZEXYZ9"
+  }
+};
+
+export default API_KEYS;
