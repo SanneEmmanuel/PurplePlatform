@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Sanne Karibo",
+    "role": "Founder & CEO",
+    "bio": "Visionary leader with 15+ years in AI development and financial markets. Passionate about making investing accessible for everyone.",
+    "image": "/src/founder1.jpg"
+  },
+  {
+    "name": "Maya Patel",
+    "role": "Chief Technology Officer",
+    "bio": "Expert in AI and machine learning systems, driving innovation behind PurpleBot’s algorithms and ensuring platform scalability.",
+    "image": "/src/founder2.jpg"
+  },
+  {
+    "name": "Liam Chen",
+    "role": "Head of Finance",
+    "bio": "Experienced financial strategist overseeing portfolio management, risk analysis, and investment diversification.",
+    "image": "/src/founder3.jpg"
+  },
+  {
+    "name": "Sofia Martinez",
+    "role": "Marketing Director",
+    "bio": "Creative mind crafting the brand narrative and investor relations to ensure the Purple Platform reaches global audiences.",
+    "image": "/src/founder4.jpg"
+  }
+]
