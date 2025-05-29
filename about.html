@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - The Purple Platform</title>
+
+  <!-- Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f6f0fc;
+      color: #3e2f5b;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background: #6a11cb;
+      padding: 0 20px;
+      box-shadow: 0 4px 20px rgba(106, 17, 203, 0.5);
+    }
+
+    nav .brand-logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #fff;
+      line-height: 56px;
+    }
+
+    nav ul li a {
+      color: #eee;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffeb3b;
+    }
+
+    .sidenav li a {
+      color: #6a11cb;
+      font-weight: 600;
+    }
+
+    /* Header banner with logo */
+    .header-banner {
+      background: linear-gradient(135deg, #6a11cb 0%, #9b59b6 100%);
+      color: #fff;
+      padding: 3rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-banner img.logo {
+      width: 120px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(155, 89, 182, 0.6);
+      margin-bottom: 1.5rem;
+      animation: popIn 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .header-banner h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 1rem;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    .header-banner p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.3rem;
+      line-height: 1.5;
+      font-weight: 500;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    /* Our Story section */
+    .our-story {
+      max-width: 900px;
+      margin: 5rem auto 3rem;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .our-story h2 {
+      font-weight: 800;
+      font-size: 2.8rem;
+      color: #6a11cb;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .our-story p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #4b3a73;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    /* Team grid */
+    .team-container {
+      max-width: 1100px;
+      margin: 0 auto 5rem;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .team-member {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(106, 17, 203, 0.15);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      opacity: 0;
+      transform: translateY(40px);
+      animation-fill-mode: forwards;
+      animation-name: fadeSlideUp;
+      animation-duration: 0.8s;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(106, 17, 203, 0.3);
+    }
+
+    /* Stagger animations handled dynamically by JS */
+
+    .team-member img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      filter: brightness(0.85);
+      transition: filter 0.3s ease;
+    }
+
+    .team-member:hover img {
+      filter: brightness(1);
+    }
+
+    .member-info {
+      padding: 1.5rem 1.8rem;
+      text-align: center;
+    }
+
+    .member-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #6a11cb;
+      margin-bottom: 0.3rem;
+    }
+
+    .member-role {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #9b59b6;
+      margin-bottom: 0.8rem;
+    }
+
+    .member-bio {
+      font-size: 0.95rem;
+      color: #5e4a8a;
+      line-height: 1.4;
+    }
+
+    /* Footer */
+    footer.page-footer {
+      background: #6a11cb;
+      padding: 2rem 1rem;
+      color: #ddd;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: auto;
+      box-shadow: 0 -4px 12px rgba(106, 17, 203, 0.6);
+    }
+
+    /* Animations */
+    @keyframes popIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .header-banner h1 {
+        font-size: 2.2rem;
+      }
+
+      .our-story h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="z-depth-3">
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo">The Purple Platform</a>
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="dashboard.html"><i class="material-icons">dashboard</i>Dashboard</a></li>
+        <li><a href="opportunities.html"><i class="material-icons">insights</i>Opportunities</a></li>
+        <li><a href="about.html"><i class="material-icons">info</i>About Us</a></li>
+        <li><a href="login.html"><i class="material-icons">login</i>Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <ul class="sidenav" id="mobile-nav">
+    <li><a href="dashboard.html"><i class="material-icons">dashboard</i>Dashboard</a></li>
+    <li><a href="opportunities.html"><i class="material-icons">insights</i>Opportunities</a></li>
+    <li><a href="about.html"><i class="material-icons">info</i>About Us</a></li>
+    <li><a href="login.html"><i class="material-icons">login</i>Login</a></li>
+  </ul>
+
+  <!-- Header Banner -->
+  <section class="header-banner">
+    <img src="/src/logo.jpg" alt="The Purple Platform Logo" class="logo" />
+    <h1>About The Purple Platform</h1>
+    <p>
+      Empowering investors worldwide with intelligent, AI-driven portfolio management.  
+      We bring innovation, security, and transparency to the future of investing.
+    </p>
+  </section>
+
+  <!-- Our Story -->
+  <section class="our-story">
+    <h2>Our Story</h2>
+    <p>
+      Founded by a team of AI experts and financial veterans, The Purple Platform was created to revolutionize how investments are managed.  
+      Combining cutting-edge machine learning technology with deep market insights, we deliver intelligent and automated investment strategies that evolve with market trends.  
+      Our platform is designed to provide you peace of mind, flexibility, and the growth you deserve.
+    </p>
+  </section>
+
+  <!-- Team Container (initially empty) -->
+  <section class="team-container container" id="team-container">
+    <!-- Team members will be inserted here dynamically -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    &copy; 2025 The Purple Platform. All rights reserved.
+  </footer>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script>
+    // Initialize sidenav for mobile
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems);
+
+      // Fetch and display team members
+      fetch('/src/team.json')
+        .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.json();
+        })
+        .then(teamData => {
+          const container = document.getElementById('team-container');
+
+          teamData.forEach((member, index) => {
+            // Create the card element
+            const card = document.createElement('div');
+            card.className = 'team-member';
+            // Add animation delay to stagger fade-in
+            card.style.animationDelay = `${index * 0.3}s`;
+
+            card.innerHTML = `
+              <img src="${member.image}" alt="${member.name} - ${member.role}" />
+              <div class="member-info">
+                <div class="member-name">${member.name}</div>
+                <div class="member-role">${member.role}</div>
+                <div class="member-bio">${member.bio}</div>
+              </div>
+            `;
+
+            container.appendChild(card);
+          });
+        })
+        .catch(error => {
+          console.error('Error loading team data:', error);
+          const container = document.getElementById('team-container');
+          container.innerHTML = '<p style="color: red; text-align: center;">Failed to load team members. Please try again later.</p>';
+        });
+    });
+  </script>
+</body>
+</html>
